@@ -1,0 +1,60 @@
+<div class="container" *ngIf="!successfulSubmission">
+  <h1 class="text-center">Submission</h1>
+  <form class="submission-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="submission-block">
+      <label for="firstName" class="submission-form-label">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        class="form-field"
+        [ngClass]="{'submission-error': form.controls.firstName.errors, 'submission-success': !form.controls.firstName.errors}"
+        formControlName="firstName">
+    </div>
+    <div class="submission-block">
+      <label for="lastName" class="submission-form-label">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        class="form-field"
+        [ngClass]="{'submission-error': form.controls.lastName.errors, 'submission-success': !form.controls.lastName.errors}"
+        formControlName="lastName">
+    </div>
+    <div class="submission-block">
+      <label for="email" class="submission-form-label">Email</label>
+      <input
+        type="text"
+        id="email"
+        class="form-field"
+        [ngClass]="{'submission-error': form.controls.email.errors, 'submission-success': !form.controls.email.errors}"
+        formControlName="email">
+    </div>
+    <div class="submission-block">
+      <label for="submission-title" class="submission-form-label">Title</label>
+      <input
+        type="text"
+        id="submission-title"
+        class="form-field"
+        [ngClass]="{'submission-error': form.controls.submissionTitle.errors, 'submission-success': !form.controls.submissionTitle.errors}"
+        formControlName="submissionTitle">
+    </div>
+
+    <div *ngIf="form.controls.submissionTitle.errors?.blockchain">
+      <p id="blockchain-error-message">Sorry we are not accepting talks on blockchain this year</p>
+    </div>
+    <div class="submission-block">
+      <label for="abstract" class="submission-form-label">Abstract</label>
+      <textarea
+        rows="7"
+        type="text"
+        id="abstract"
+        class="form-field"
+        [ngClass]="{'submission-error': form.controls.abstract.errors, 'submission-success': !form.controls.abstract.errors}"
+        formControlName="abstract">
+      </textarea>
+    </div>
+    <button id="submit" class="btn" type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
+<div *ngIf="successfulSubmission">
+  <h3 id="submission-success-message">{{form.value.firstName}}, thanks for submitting your talk on {{form.value.submissionTitle}}.</h3>
+</div>

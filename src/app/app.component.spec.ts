@@ -17,15 +17,15 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'atlanta-code-camp'`, async(() => {
+  it(`should have as title 'atlanta-code-camp-demo-two'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('atlanta-code-camp');
+    expect(app.title).toEqual('atlanta-code-camp-demo-two');
   }));
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to atlanta-code-camp!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to atlanta-code-camp-demo-two!');
   }));
 });

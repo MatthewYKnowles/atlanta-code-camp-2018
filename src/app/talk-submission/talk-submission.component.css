@@ -1,0 +1,46 @@
+.submissions-closed {
+  font-size: 30px;
+  color: red;
+}
+
+.submission-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submission-success{
+  border-left: solid green 5px;
+}
+
+.submission-error{
+  border-left: solid red 5px;
+}
+
+.submission-block {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.submission-form-label {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+}
+
+.form-field {
+  width: 480px;
+}
+
+.validation-block {
+  width: 4px;
+  background-color: red;
+}
+
+.text-center {
+  text-align: center;
+}
